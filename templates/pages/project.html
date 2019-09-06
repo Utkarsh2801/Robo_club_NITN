@@ -1,0 +1,70 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}{{ project.project_title }} {% endblock %}
+{% block content %}
+    <section class="main-project-img parallax-scroll" style="background:url('{{ project.project_img1.url }}') no-repeat top center/cover">
+        <div class="inner-section">
+            <h1>{{ project.project_title }}</h1>
+        </div>
+    </section>
+    <section class="description">
+        <div class="description-inner">
+            <h3>Description</h3>
+            <p>{{ project.project_description }}</p>
+        </div>
+    </section>
+    <section class="bgimg1 parallax-scroll" style="background:url('{{ project.project_team.url }}') no-repeat top center/cover"><div class="inner-section"></div>
+    </section>
+    <section class="circuit-images">
+        <h3>DESIGN</h3>
+        <div class="design">
+            {% if project.circuit_design1 %}
+            <div class="design-img">
+                <img src="{{ project.circuit_design1.url }}" alt="">
+            </div>
+            {% endif %}
+            {% if project.circuit_design2 %}
+            <div class="design-img">
+                <img src="{{ project.circuit_design2.url }}" alt="">
+            </div>
+            {% endif %}
+            {% if project.circuit_design3 %}
+            <div class="design-img">
+                <img src="{{ project.circuit_design3.url }}" alt="">
+            </div>
+            {% endif %}
+            {% if project.circuit_design4 %}
+            <div class="design-img">
+                <img src="{{ project.circuit_design4.url }}" alt="">
+            </div>
+            {% endif %}
+        </div>
+    </section>
+    <section class="bgimg2 parallax-scroll" style="background:url('{{ project.project_img2.url }}') no-repeat top center/cover">
+        <div class="inner-section"></div>
+    </section>
+    <section class="specifications">
+        <h3>DESIGN SPECIFICATION</h3>
+        <ul>
+            {% if project.des_spec1 %}
+                <li>{{ project.des_spec1 }}</li>
+            {% endif %}
+            {% if project.des_spec2 %}
+                <li>{{ project.des_spec2 }}</li>
+            {% endif %}
+            {% if project.des_spec3 %}
+                <li>{{ project.des_spec3 }}</li>
+            {% endif %}
+            {% if project.des_spec4 %}
+                <li>{{ project.des_spec4 }}</li>
+            {% endif %}
+            {% if project.des_spec5 %}
+                <li>{{ project.des_spec5 }}</li>
+            {% endif %}
+        </ul>
+        <div class = "pro-video">
+            <iframe src="{{ project.youtube_vid }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+{% endblock %}

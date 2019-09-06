@@ -1,0 +1,67 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}OUR TEAM {% endblock %}
+{% block content %}
+<section class="big-img">
+    <div id ='team-heading'>
+        <h1>OUR TEAM</h1>
+    </div>
+</section>
+    
+
+
+<!-- TEAM SECTION  -->
+<section class="team-members">
+    {% for team in team %}
+        <div class="member">
+            <img src="{{ team.avatar.url }}" alt="">
+            <div class="details">
+                <h2>{{ team.first_name }} {{ team.last_name }}</h2>
+                <h3>{{ team.branch }} ({{ team.year }})</h3>
+                <h3>{{ team.post }}</h3>
+                <div class="team-social">
+                    <a href="{{ team.facebook_link }}">    
+                        <span class="social"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="{{ team.github_link }}">    
+                        <span class="social"><i class="fa fa-github" aria-hidden="true"></i></span>
+                    </a>    
+                    <a href="{{ team.linkedin_link }}">   
+                        <span class="social"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                    </a>
+                </div> 
+            </div>
+        </div>
+    {% endfor %}
+</section>
+
+<!-- MOBILE VIEW -->
+
+<section class="m-team-members">
+    {% for team in team %}
+        <div class="m-member">
+            <img src="{{ team.avatar.url }}" alt="">
+            <div class="m-details">
+                <h2>{{ team.first_name }} {{ team.last_name }}</h2>
+                <h3>{{ team.branch }} ({{ team.year }})</h3>
+                <h3>{{ team.post }}</h3>
+                <div class="m-team-social">
+                    <a class = "icon1">    
+                        <span class="m-social"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="{{ team.facebook_link }}" >    
+                        <span class="m-social"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="{{ team.github_link }}" >    
+                        <span class="m-social"><i class="fa fa-github" aria-hidden="true"></i></span>
+                    </a>    
+                    <a href="{{ team.linkedin_link }}" >   
+                        <span class="m-social"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                    </a>
+                </div> 
+            </div>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

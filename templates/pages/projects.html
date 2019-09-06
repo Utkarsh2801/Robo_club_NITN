@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}PROJECTS{% endblock %}
+{% block content %}
+<section class="big-img" style='background:#616536'>
+    <div id ='team-heading'>
+            <h1>PROJECTS</h1>
+    </div>
+    </section>
+    <section class="projects-container">
+        <div class="main-projects">
+            <div class="project-boxes">
+                {% if projects %}
+                   {% for project in projects %}
+                        <div class="project">
+                            <div class="project-img">
+                                <img src="{{ project.project_img1.url }}" alt="">
+                            </div>
+                            <div class="project-title">
+                                <h4>{{ project.project_title }}</h4>
+                            </div>
+                            <a href="{% url 'project' project.project_title %}">
+                                <button>Read More</button>
+                            </a>
+                        </div>
+                   {% endfor %} 
+                {% else %}
+                        
+                {% endif %}
+            </div>
+        </div>
+</section>
+{% endblock %}

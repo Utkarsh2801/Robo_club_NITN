@@ -1,0 +1,142 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}EVENTS {% endblock %}
+{% block content %}
+<section class="big-img" style='background:#616536'>
+    <div id ="events-heading">
+        <h1>EVENTS</h1>
+    </div>
+</section>
+<div class="main-content">
+    <div class="events">
+        <div class="event-boxes">
+            {% for event in event %}
+                <div class="event">
+                    <div class="event-img">
+                        <img src="{{ event.event_image.url }}" alt="">
+                    </div>
+                    <div class="event-title">
+                        <h4>{{ event.event_title}} ({{ event.year }})</h4>
+                    </div>
+                    <div class="event-description">
+                        <p>
+                            {{ event.small_des }}
+                        </p>
+                    </div>
+                    <button>Read More</button>
+                </div>
+            
+            
+            <!-- MODEL  -->
+            <div class="event-model-back">
+                <div class="event-model">
+                    <h1>{{ event.event_title }} ({{ event.year }})</h1>
+                    <div class="main-description">
+                        {% if event.big_des1 %}
+                            <p>
+                                {{ event.big_des1 }} 
+                            </p>
+                        {% endif %}
+                        {% if event.big_des2 %}
+                            <p>
+                                {{ event.big_des2 }} 
+                            </p>
+                        {% endif %}
+                        {% if event.big_des3 %}
+                            <p>
+                                {{ event.big_des3 }} 
+                            </p>
+                        {% endif %}
+                    </div>
+
+                    <div class="event-gallery">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                {% if event.event_image1 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ event.event_image1.url }}" alt="">
+                                </div>
+                                {% endif %}
+                                {% if event.event_image2 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ event.event_image2.url }}" alt="">
+                                </div>
+                                {% endif %}
+                                {% if event.event_image3 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ event.event_image3.url }}" alt="">
+                                </div>
+                                {% endif %}
+                                {% if event.event_image4 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ event.event_image4.url }}" alt="">
+                                </div>
+                                {% endif %}
+                                {% if event.event_image5 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ event.event_image5.url }}" alt="">
+                                </div>
+                                {% endif %}
+                                {% if event.event_image6 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ event.event_image6.url }}" alt="">
+                                </div>
+                                {% endif %}
+                                {% if event.event_image7 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ event.event_image7.url }}" alt="">
+                                </div>
+                                {% endif %}
+                                {% if event.event_image8 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ event.event_image8.url }}" alt="">
+                                </div>
+                                {% endif %}
+                                {% if event.event_image9 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ event.event_image9.url }}" alt="">
+                                </div>
+                                {% endif %}
+                                {% if event.event_image10 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ event.event_image10.url }}" alt="">
+                                </div>
+                                {% endif %}
+                                
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>                                
+                    </div>
+                    <span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'dist/js/swiper.min.js' %}"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        observer:true,
+        observeParents: true,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+</script>   
+{% endblock %}
+

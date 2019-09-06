@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="icon" type="image/png" href="club_logo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/club_logo.png' %}">
+    <link rel="stylesheet" href="{% static './dist/css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+              <a href="{% url 'index' %}"><img src="{% static 'images/club_logo.png' %}" alt=""></a>
+            </div>
+            <div class="ham">
+                <input type="checkbox" class='input-ham'>
+                <div></div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <a href="{% url 'index' %}">
+                        <li>HOME</li>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                    </a>
+                    <!-- author : Utkarsh Tripathi (NIT NAGALAND) -->
+                    <a href="{% url 'projects' %}">
+                        <li>PROJECTS</li>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                    </a>
+                    <a href="{% url 'team' %}">
+                        <li>TEAM</li>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                    </a>
+                    <a href="{% url 'events' %}">
+                        <li>EVENTS</li>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                    </a>
+                    <a href="{% url 'about' %}">
+                        <li>ABOUT US</li>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                        <span class='span'></span>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+        
+        {% block content%} {% endblock %}
+        
+        <footer class="footer">
+            <h3>Site Designed BY | <span> <a href=''>WEB Team</span></a> Robotics Club NITN</h3>
+        </footer>
+    </div>
+    
+    <script src="{% static 'js/js.js' %}"></script>
+</body>
+</html>
