@@ -50,3 +50,6 @@ def project(request, project_title):
     return render(request, 'pages/project.html', {
         'project' : data
     })
+
+def faculty(request):
+    return render(request, 'pages/faculty.html')

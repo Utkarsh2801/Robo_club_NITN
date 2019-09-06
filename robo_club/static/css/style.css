@@ -62,7 +62,7 @@
         padding: 1rem 6rem;
         display:grid;
         grid-column-gap: 2rem;
-        grid-template-columns: 120px 350px auto;
+        grid-template-columns: 120px 200px auto;
         grid-template-areas:
             "logo . menu";
         z-index:2;
@@ -157,13 +157,13 @@
 
     nav ul {
         display:grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(5, 1fr);
+        grid-gap:10px;
+        grid-template-columns: repeat(6, 1fr);
         list-style: none;
         height:100%;
         overflow: hidden;
     }
-
+    
     nav ul a{
         display:block;
         text-decoration:none;
@@ -246,7 +246,6 @@
         font-family: 'Ubuntu', sans-serif;
         font-weight:700;
         font-size:0.8rem;
-        letter-spacing: 1px;
     }
 
     /* big background with main page data */
@@ -484,6 +483,23 @@
         left:50%;
         transform:translateX(-50%);
     }
+
+    .president{
+        width:280px;
+        margin:0 auto;
+        padding: 2.5rem 0;
+    }
+
+    .team-section-head{
+        width:300px;
+        margin: 2rem auto;
+        text-align:center;
+        padding: 2rem 0 1rem 0;
+        font-size:2rem;
+        margin-bottom : 0;
+        border-bottom:1px solid rgba(0,0,0,0.3);
+        font-family: 'Signika Negative', sans-serif;
+    }
     
     .team-members{
         max-width:1000px;
@@ -495,21 +511,34 @@
         padding: 2.5rem 0;
     }
 
-    .team-members > .member{
+    #mentors{
+        width:650px;
+        margin:0 auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #core-team{
+        margin-bottom:100;
+    }
+
+    .team-members > .member, 
+    .president > .member{
         height:350px;
         box-shadow: 5px 5px 10px #000;
         position:relative;
         background:transparent;
         overflow:hidden;
     }
-    .team-members > .member > img{
+    .team-members > .member > img, 
+    .president > .member> img{
         width:100%;
         height:100%;
         object-fit: cover;
         transition:1s;
     }
 
-    .team-members > .member > .details{
+    .team-members > .member > .details, 
+    .president > .member > .details{
         position:absolute;
         top:20px;
         left:20px;
@@ -522,32 +551,38 @@
     }
     
     
-    .team-members > .member:hover > img{
+    .team-members > .member:hover > img, 
+    .president > .member:hover > img{
         transform:scale(1.3);
     }
     
     
-    .team-members > .member:hover > .details{
+    .team-members > .member:hover > .details, 
+    .president > .member:hover > .details{
         transform:scale(1);
         opacity:1;
         
     }
 
-    .team-members > .member > .details> h2, h3, .team-social{
+    .team-members > .member > .details > h2, h3, .team-social, 
+    .president > .member > details > h2, h3, .team-social{
         width:100%;
         text-align: center;
     }
 
     /* author : Utkarsh Tripathi (NIT NAGALAND) */
 
-    .team-members > .member > .details > h2{
+    .team-members > .member > .details > h2, 
+    .president > .member > .details > h2{
         font-family: 'Work Sans', sans-serif;
         letter-spacing: 0.1rem;
         font-size:1.5rem;
         margin-top:3rem;
+        text-align: center;
     }
 
-    .team-members > .member > .details > h3{
+    .team-members > .member > .details > h3, 
+    .president > .member > .details > h3{
         margin-top:0.8rem;
         font-family: 'Work Sans', sans-serif;
         font-weight: 700;
@@ -555,7 +590,8 @@
         padding-bottom:1rem;
     }
     
-    .team-members > .member > .details > h3:before{
+    .team-members > .member > .details > h3:before, 
+    .president > .member > .details > h3:before{
         content:'';
         position:absolute;
         width:50px;
@@ -567,7 +603,8 @@
         border-radius: 10px;
     }
     
-    .team-members > .member > .details > .team-social{
+    .team-members > .member > .details > .team-social,
+    .president > .member > .details > .team-social{
         position: absolute;
         bottom:-50px;
         width:150px;
@@ -580,12 +617,14 @@
         transition: all .5s ease-in-out;
     }
 
-    .team-members > .member > .details > .team-social > a, .social{
+    .team-members > .member > .details > .team-social > a, .social,
+    .president > .member > .details > .team-social > a, .social{
         display:block;
         text-decoration:none;
     }
 
-    .team-members > .member > .details > .team-social > a{
+    .team-members > .member > .details > .team-social > a,
+    .president > .member > .details > .team-social > a{
         width:40px;
         height:40px;
         border-radius:50px;
@@ -598,13 +637,15 @@
         font-size:1.5rem;
     }
 
-    .team-members > .member > .details > .team-social > a:hover{
+    .team-members > .member > .details > .team-social > a:hover,
+    .president > .member > .details > .team-social > a:hover{
         background:#000;
         color:#fff;
     }
     
     
-    .team-members > .member:hover > .details > .team-social{
+    .team-members > .member:hover > .details > .team-social,
+    .president > .member:hover > .details > .team-social{
             opacity:1;
             visibility:visible;
             transform:translate(-50%,-130px);
@@ -743,6 +784,15 @@
     .m-team-members{
         display:none;
     }
+
+    
+    #m-president{
+        height:450px;
+    }
+
+    .mobile-view{
+        display:none;
+    }
     /* MEDIA QUIRIES */
 
     @media screen and (max-width:1000px){
@@ -769,7 +819,14 @@
         .m-team-members{
             display:grid;
         }
+        .mobile-view{
+            display:block;
+        }
         .team-members{
+            display:none;
+        }
+
+        .desktop-view{
             display:none;
         }
         
@@ -789,6 +846,14 @@
             font-size:2rem;
         }
         .team-members{
+            display:none;
+        }
+
+        .mobile-view{
+            display:block;
+        }
+
+        .desktop-view{
             display:none;
         }
 
@@ -1560,5 +1625,66 @@
 
         .specifications > h3{
             font-size:1.5rem;
+        }
+    }
+
+    .faculty{
+        width:70%;
+        margin:0 auto;
+        padding-top:150px;
+        padding-bottom:150px;
+    }
+
+    .faculty-members{
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .faculty > .faculty-members > h1{
+        text-align:center;
+        font-size:2rem;
+    }
+
+
+    .faculty-image{
+        margin-top:2rem;
+        height:200px;
+        width:150px;
+        background:#000000;
+    }
+
+    .faculty-details{
+        margin-top:3rem;
+        width:100%;
+    }
+
+    .faculty-details > h2{
+        width:100%;
+        text-align:left;
+        font-size:1.8rem;
+        margin-top:1.5rem;
+    }
+
+    .faculty-details > ul{
+        list-style-type: none;
+        margin-top:1.5rem;
+        padding: 15px 0 15px 0;
+        border-top:1px solid rgba(0,0,0,0.3);
+        border-bottom:1px solid rgba(0,0,0,0.3);
+        color:#6F6E6E;
+    }
+
+    .faculty-details > ul > li{
+        padding: 5px 5px 5px 0;
+        font-size:1.2rem;
+        font-family:calibri;
+    }
+
+    @media screen and (max-width:900px){
+        .faculty{
+            width:90%;
         }
     }
