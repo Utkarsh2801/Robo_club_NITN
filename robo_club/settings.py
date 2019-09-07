@@ -25,7 +25,7 @@ SECRET_KEY = '7266z&i$y+b$vyytray4x2arf5cw%uc%y7vk+=r(f$7lgt_i43'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['robotics.nitnagaland.ac.in']
 
 
 # Application definition

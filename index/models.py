@@ -25,23 +25,6 @@ class project(models.Model):
     def __str__(self):
         return self.project_title
 
-
-
-class Team(models.Model):
-    id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length = 10,  blank=False)
-    last_name = models.CharField(max_length = 10,  blank=False)
-    avatar = models.ImageField(upload_to='photos/')
-    branch = models.CharField(max_length = 10,  blank=False)
-    year = models.CharField(max_length = 5,  blank=False)
-    post = models.CharField(max_length = 10,  blank=False)
-    facebook_link = models.URLField(max_length=100)
-    github_link = models.URLField(max_length=100)
-    linkdein_link = models.URLField(max_length=100)
-
-    def __str__(self):
-        return self.first_name
-
 class event(models.Model):
     event_title = models.CharField(max_length = 20,  blank=False)
     year = models.IntegerField()

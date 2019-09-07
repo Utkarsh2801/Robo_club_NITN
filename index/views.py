@@ -21,12 +21,7 @@ def projects(request):
 
 
 def team(request):
-    team = models.Team.objects.all()
-
-    context  = {
-        'team' : team,
-    }
-    return render(request, 'pages/team.html', context)
+    return render(request, 'pages/team.html')
 
 
 
